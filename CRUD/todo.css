@@ -1,0 +1,12 @@
+.todo-container h1{
+    text-align: center;
+}
+.todo-container{
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid rebeccapurple;
+    background-color: antiquewhite;
+}
+button {
+    float: right;
+}

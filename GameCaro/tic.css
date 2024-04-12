@@ -1,0 +1,19 @@
+#main{
+    text-align: center;
+    background-color: greenyellow;
+}
+.cell { 
+    width: 80px; 
+    height: 80px; 
+    text-align: center;
+    color:blue;
+    font-size: 25px; 
+}
+.content h1{
+    padding: 10px;
+    color: red;
+}   
+#but{
+    border: 1px solid dodgerblue;
+    border-radius: 8px;
+}
