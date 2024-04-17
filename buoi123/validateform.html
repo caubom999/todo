@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/c56d76baa9.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: rebeccapurple;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 430px;
+            box-shadow: 5px 5px 5px black;
+            padding: 0px 0px 0px 100px;
+            background-color: hsla(0, 0%, 100%, 0.5);
+        }
+
+        .formerror input {
+            border-color: red;
+        }
+
+        .formsuccess input {
+            border-color: greenyellow;
+        }
+
+        .control-form.fail i.fa-exclamation-circle {
+            color: red;
+            visibility: visible;
+        }
+
+        .control-form.success i.fa-check-circle {
+            color: greenyellow;
+            visibility: visible;
+        }
+
+        .control-form i {
+            visibility: hidden;
+        }
+
+        .control-form small {
+            visibility: hidden;
+            position: relative;
+
+        }
+
+        .formerror small {
+            visibility: visible;
+        }
+
+        .form button {
+            margin: 0px 0px 20px 170px;
+            background-color: #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .control-form input {
+            margin: 40px;
+        }
+
+        .control-form {
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <center>
+                <h1>Create Ac</h1>
+            </center>
+        </div>
+        <form action="" class=form id="form">
+            <div class="control-form">
+                <label for="username">Username </label>
+                <input type="text" id="username" placeholder="Username">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                <small></small>
+            </div>
+            <div class="control-form">
+                <label for="email">Email </label>
+                <input type="text" id="email" placeholder="Email">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                <small></small>
+            </div>
+            <div class="control-form">
+                <label for="password">Password </label>
+                <input type="text" id="password" placeholder="Password">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="control-form">
+                <label for="rpassword">Password Check</label>
+                <input type="text" id="rpassword" placeholder="Password Check">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error</small>
+            </div>
+            <button>Submit</button>
+        </form>
+
+    </div>
+    <script>
+        const form = document.getElementById("form")
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const rpassword = document.getElementById("rpassword");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            create();
+        });
+        function create() {
+            const susername = username.value.trim();
+            const semail = email.value.trim();
+            const spassword = password.value.trim();
+            const srpassword = rpassword.value.trim();
+
+            if (susername === "") {
+                ferror(username, "Erro username");
+            }
+            else {
+                vsuccess(username);
+            }
+            if (semail === "") {
+                ferror(email, "Erro email");
+            }
+            else if (!femai(semail)) {
+                ferror(email, "Erro email x@gmail.com");
+            }
+            else {
+                vsuccess(email);
+            }
+            if (spassword === "") {
+                ferror(password, "Erro password");
+            }
+            else {
+                vsuccess(password);
+            }
+            if (srpassword === "") {
+                ferror(rpassword, "Erro rpassword");
+            }
+            else if (srpassword !== spassword) {
+                ferror(rpassword, "Erro rpassword");
+            }
+            else {
+                vsuccess(rpassword);
+            }
+        }
+        function ferror(input, message) {
+            const iparent = input.parentElement;
+            const small = iparent.querySelector('small');
+            iparent.className = 'control-form fail';
+            small.innerText = message;
+        }
+        function vsuccess(input) {
+            const iparent = input.parentElement;
+            iparent.className = 'control-form success'
+        }
+        function femai(email) {
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

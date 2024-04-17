@@ -1,19 +1,93 @@
-#main{
-    text-align: center;
-    background-color: greenyellow;
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.cell { 
-    width: 80px; 
-    height: 80px; 
-    text-align: center;
-    color:blue;
-    font-size: 25px; 
+
+/* Body styles */
+body {
+    font-family: 'Itim', cursive;
+    background-color: #f0f0f0;
 }
-.content h1{
-    padding: 10px;
-    color: red;
-}   
-#but{
-    border: 1px solid dodgerblue;
-    border-radius: 8px;
+
+/* Main container */
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Title styles */
+.title {
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Display styles */
+.display {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Container styles */
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 100px); /* 5 columns instead of 3 */
+    grid-template-rows: repeat(5, 100px); /* 5 rows instead of 3 */
+    gap: 10px;
+}
+
+/* Tile styles */
+.tile {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tile:hover {
+    background-color: #e0e0e0;
+}
+
+/* Display announcer styles */
+.announcer {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.hide {
+    display: none;
+}
+
+/* Controls styles */
+.controls {
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
 }

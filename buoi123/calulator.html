@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            text-align: center;
+            border: 1px solid rebeccapurple;
+            width: 400px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="caculator">
+            <div class="head">
+                <h1>Tip</h1>
+            </div>
+            <form action="">
+                <div class="bill">
+                    <label>Hay nhap bill</label>
+                    <input type="text" id="bill">
+                </div>
+                <div class="servicetip">
+                    <label>serviceTIp</label>
+                    <select id="servicetip">
+                        <option value="0.1">10&#37; &#45;</option>
+                        <option value="0.25">25&#37; &#45;</option>
+                    </select>
+                </div>
+
+            </form>
+            <div class="people">
+                <label>Number</label><input type="text" id="numberOfPeople">
+                <button onclick="caculator()">Caculator</button>
+            </div>
+        </div>
+        <div>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function caculator() {
+            var sbill = document.getElementById('bill').value;
+            var sservicetip = document.getElementById('servicetip').value;
+            var snumberOfPeople = document.getElementById('numberOfPeople').value;
+            var sresult = document.getElementById('result');
+
+            if (sbill === '') {
+                alert("please input");
+                return;
+            }
+            if (snumberOfPeople === '' && snumberOfPeople < 1) {
+                snumberOfPeople = 1;
+            }
+            var kq = (sbill * sservicetip) / snumberOfPeople;
+            sresult.innerHTML = kq;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+let flag = { value: 1 };
+function handleClickBtn(flag, id) {
+    let element = document.getElementById(`${id}`);
+
+    if (flag == 1) {
+        element.value = "X";
+        element.disabled = true;
+        flag = 0;
+    }
+    else {
+        element.value = "0";
+        element.disabled = true;
+        flag = 1;
+    }
+}

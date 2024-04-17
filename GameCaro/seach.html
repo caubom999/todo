@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="name" id="name" placeholder="nhap ten">
+    <input type="text" name="age" id="age" placeholder="nhap tuoi">
+    <button onclick="Search()">Search</button>
+    <div id="result"></div>
+
+
+    <script>
+        const students = [
+            ['thanh', '16', 'ok', 2],
+            ['thanh', '14', 'x', 3],
+            ['thanh', '14', '', 5],
+            ['thanh', '18', 'x', 8]
+        ];
+        const a = [1, 2, 3]
+        function Search() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const kq = document.getElementById('result');
+            const tk = students.filter(x => x[0] === name || x[1] === age)
+            if (tk.length === 0) {
+                kq.innerHTML = "nothing";
+            } else {
+                kq.innerHTML = '';
+                tk.forEach(
+                    x => {
+                        kq.innerHTML += `<p>Name: ${x[0]}, Age: ${x[1]}, Status: ${x[2]}</p>`;
+                    }
+                )
+            }
+            students.forEach(x => {
+                x[1] = parseInt(x[1]);
+            })
+
+            const sort = students.sort((a, b) => a[1] - b[1])
+
+            sort.forEach(
+                x => {
+                    kq.innerHTML += `<p>Name: ${x[0]}, Age: ${x[1]}, Status: ${x[2]}</p>`;
+                }
+            )
+
+            let add = 0;
+            students.forEach(x => {
+                if (x[1] === '14') {
+                    if (typeof x[3] === 'number') {
+                        add += x[3];
+                    }
+                }
+            })
+            console.log('luong co ban 14 tuoi ', add)
+        }
+
+    </script>
+</body>
+
+</html>

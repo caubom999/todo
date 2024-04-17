@@ -1,69 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="tic.css">
-    <script src="tic.js"></script>
+    <link rel="stylesheet" href="tic.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
 
 <body>
-    <div id="main">
-        <div class="content">
-            <h1>Caro</h1>
-            <p id="ins">
-                <b>Player X </b>
-                <br>
-                <b>Player 0</b>
-            </p>
-        </div>
-        <br><br>
-        <div class="ui">
-            <div class="row">
-                <input type="text" id="b1" class="cell" onclick="myfunc_3(); myfunc();" readonly>
-                <input type="text" id="b2" class="cell" onclick="myfunc_4(); myfunc();" readonly>
-                <input type="text" id="b3" class="cell" onclick="myfunc_5(); myfunc();" readonly>
-                <input type="text" id="b4" class="cell" onclick="myfunc_6(); myfunc();" readonly>
-                <input type="text" id="b5" class="cell" onclick="myfunc_7(); myfunc();" readonly>
-            </div>
-            <div class="row">
-                <input type="text" id="b6" class="cell" onclick="myfunc_8(); myfunc();" readonly>
-                <input type="text" id="b7" class="cell" onclick="myfunc_9(); myfunc();" readonly>
-                <input type="text" id="b8" class="cell" onclick="myfunc_10(); myfunc();" readonly>
-                <input type="text" id="b9" class="cell" onclick="myfunc_11(); myfunc();" readonly>
-                <input type="text" id="b10" class="cell" onclick="myfunc_12(); myfunc();" readonly>
-            </div>
-            <div class="row">
-                <input type="text" id="b11" class="cell" onclick="myfunc_13(); myfunc();" readonly>
-                <input type="text" id="b12" class="cell" onclick="myfunc_14();myfunc();" readonly>
-                <input type="text" id="b13" class="cell" onclick="myfunc_15();myfunc();" readonly>
-                <input type="text" id="b14" class="cell" onclick="myfunc_16(); myfunc();" readonly>
-                <input type="text" id="b15" class="cell" onclick="myfunc_17(); myfunc();" readonly>
-            </div>
-            <div class="row">
-                <input type="text" id="b16" class="cell" onclick="myfunc_18(); myfunc();" readonly>
-                <input type="text" id="b17" class="cell" onclick="myfunc_19();myfunc();" readonly>
-                <input type="text" id="b18" class="cell" onclick="myfunc_20();myfunc();" readonly>
-                <input type="text" id="b19" class="cell" onclick="myfunc_21(); myfunc();" readonly>
-                <input type="text" id="b20" class="cell" onclick="myfunc_22(); myfunc();" readonly>
-            </div>
-            <div class="row">
-                <input type="text" id="b21" class="cell" onclick="myfunc_23(); myfunc();" readonly>
-                <input type="text" id="b22" class="cell" onclick="myfunc_24();myfunc();" readonly>
-                <input type="text" id="b23" class="cell" onclick="myfunc_25();myfunc();" readonly>
-                <input type="text" id="b24" class="cell" onclick="myfunc_26(); myfunc();" readonly>
-                <input type="text" id="b25" class="cell" onclick="myfunc_27(); myfunc();" readonly>
-            </div>
+    <main class="background">
+        <section class="title">
+            <h1>Tic Tac Toe</h1>
+        </section>
+        <section class="display">
+            Player <span class="display-player playerX">X</span>'s turn
+        </section>
+        <section class="container">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </section>
+        <section class="display announcer hide"></section>
+        <section class="controls">
+            <button id="reset" onclick="reset()">Reset</button>
+        </section>
+    </main>
 
-        </div>
-        <br><br><br>
-
-        <button id="but" onclick="myfunc_2()">
-            RESET
-        </button>
-        <br><br>
-        <p id="print"></p>
-    </div>
+    <script src="tic.js"></script>
 </body>
 
 </html>
